@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="260.000000pt"
+   height="260.000000pt"
+   viewBox="0 0 260.000000 260.000000"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg2">
+  <defs
+     id="defs16" />
+  <metadata
+     id="metadata4">
+Created by potrace 1.11, written by Peter Selinger 2001-2013
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title></dc:title>
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <path
+     style="fill:#e31018;fill-opacity:1"
+     id="path107"
+     d="M 258.72176,175.90429 C 220.4231,150.9404 152.81901,200.01538 130.29723,214.66811 92.618805,238.89549 32.18601,256.64933 0.94237338,218.54449 52.110612,222.42088 52.653306,160.20495 51.684211,125.51133 50.482532,82.871138 56.490924,44.572487 90.990719,16.972649 c -2.59717,17.908883 -6.163445,34.887435 10.582521,54.656981 14.14879,16.629679 36.47675,25.661651 57.17663,30.77847 41.28346,10.15611 86.01691,28.02624 99.93312,73.65125"
+     class="cls-2" />
+</svg>
