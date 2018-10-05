@@ -3,7 +3,7 @@ COPY kibana /kibana
 RUN apk add --no-cache zip
 RUN zip -r /gradiant_style.zip kibana
 
-FROM docker.elastic.co/kibana/kibana-oss:6.2.4
+FROM docker.elastic.co/kibana/kibana-oss:6.3.0
 MAINTAINER cgiraldo@gradiant.org
 # custom favicons
 COPY favicons/* /usr/share/kibana/src/ui/public/assets/favicons/
@@ -17,5 +17,5 @@ RUN sed -i 's/title Kibana/title Gradiant/g' /usr/share/kibana/src/ui/ui_render/
 
 # custom plugin css
 COPY --from=builder /gradiant_style.zip /
-RUN sed -i "s/bundleFile('commons.style.css')/bundleFile('commons.style.css'),bundleFile('gradiant_style.style.css')/g" /usr/share/kibana/src/ui/ui_render/views/ui_app.jade
+RUN sed -i "s/commons.style.css'),/commons.style.css'),bundleFile('gradiant_style.style.css'),/g" /usr/share/kibana/src/ui/ui_render/bootstrap/template.js.hbs
 RUN bin/kibana-plugin install file:///gradiant_style.zip
