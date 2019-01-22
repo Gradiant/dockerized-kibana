@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "kibana": {
-    "version": "6.4.2"
+    "version": "6.5.0"
   },
   "author": "Carlos Giraldo <cgiraldo@gradiant.org>",
   "website": "http://www.gradiant.org"
