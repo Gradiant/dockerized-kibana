@@ -20,7 +20,7 @@ RUN sed -i 's/title Kibana/title Gradiant/g' /usr/share/kibana/src/legacy/ui/ui_
 
 # custom plugin css
 COPY --from=builder /gradiant_style.zip /
-RUN sed -i 's/commons.style.css`,/commons.style.css`,`${regularBundlePath}\/gradiant_style.style.css`,/g' /usr/share/kibana/src/legacy/ui/ui_render/ui_render_mixin.js
+RUN sed -i 's/reverse()/reverse(),`${regularBundlePath}\/gradiant_style.style.css`/g' /usr/share/kibana/src/legacy/ui/ui_render/ui_render_mixin.js
 
 # Modify logoKibana in vendorsDynamicDLL to be empty. Custom icon will be set as background-image in gradiant_style plugin css
 RUN sed -i 's@var logoKibana=function.*logoKibana.defaultProps=@var logoKibana=function logoKibana(props){return _react.default.createElement("svg",props,_react.default.createElement("g",{fill:"none",fillRule:"evenodd"}))};logoKibana.defaultProps=@g' /usr/share/kibana/built_assets/dlls/vendors.bundle.dll.js
