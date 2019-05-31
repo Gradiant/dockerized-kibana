@@ -3,7 +3,7 @@ COPY kibana /kibana
 RUN apk add --no-cache zip
 RUN zip -r /gradiant_style.zip kibana
 
-FROM docker.elastic.co/kibana/kibana:7.0.1
+FROM docker.elastic.co/kibana/kibana:7.1.0
 MAINTAINER cgiraldo@gradiant.org
 
 # custom favicons
