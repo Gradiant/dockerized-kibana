@@ -3,7 +3,7 @@ COPY kibana /kibana
 RUN apk add --no-cache zip
 RUN zip -r /gradiant_style.zip kibana
 
-FROM docker.elastic.co/kibana/kibana-oss:7.1.1
+FROM docker.elastic.co/kibana/kibana-oss:7.3.0
 MAINTAINER cgiraldo@gradiant.org
 
 # custom favicons
@@ -23,7 +23,7 @@ COPY --from=builder /gradiant_style.zip /
 RUN sed -i 's/reverse()/reverse(),`${regularBundlePath}\/gradiant_style.style.css`/g' /usr/share/kibana/src/legacy/ui/ui_render/ui_render_mixin.js
 
 # Modify logoKibana in vendorsDynamicDLL to be empty. Custom icon will be set as background-image in gradiant_style plugin css
-RUN sed -i 's@var logoKibana=function.*logoKibana.defaultProps=@var logoKibana=function logoKibana(props){return _react.default.createElement("svg",props,_react.default.createElement("g",{fill:"none",fillRule:"evenodd"}))};logoKibana.defaultProps=@g' /usr/share/kibana/built_assets/dlls/vendors.bundle.dll.js
+RUN sed -i 's@evenodd"}.*)))};@evenodd"}))};@g' /usr/share/kibana/built_assets/dlls/icon.logo_kibana-js.bundle.dll.js
 
 RUN bin/kibana-plugin install file:///gradiant_style.zip
 RUN bin/kibana --env.name=production --logging.json=false --optimize
