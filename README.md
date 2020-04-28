@@ -1,5 +1,19 @@
 # Dockerized Kibana with Gradiant Branding 
 
+## TL;DR
+
+To build a specific kibana version checkout the corresponding minor version branch and use `build.sh` script.
+Example:
+
+```
+git checkout 7.5
+cd scripts
+IMAGE_REPO=gradiant/kibana-oss KIBANA_VERSIONS="7.5.0" ./build.sh
+```
+It will result in a modified version of the image `docker.elastic.co/kibana/kibana-oss:7.5.0` named `gradiant/kibana-oss:7.5.0`.
+
+## Kibana Info
+
 Kibana is your window into the [Elastic Stack](https://www.elastic.co/products). Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.
 
 - [Getting Started](#getting-started)

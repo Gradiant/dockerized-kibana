@@ -1,9 +1,14 @@
+ARG base_image="docker.elastic.co/kibana/kibana"
+ARG version="7.5.0"
+
 FROM alpine:3.7 as builder
+ARG version="7.5.0"
 COPY kibana /kibana
+RUN sed -i "7s/.*/    \"version\": \"${version}\"/" /kibana/gradiant_style/package.json
 RUN apk add --no-cache zip
 RUN zip -r /gradiant_style.zip kibana
 
-FROM docker.elastic.co/kibana/kibana:7.4.0
+FROM $base_image:$version
 MAINTAINER cgiraldo@gradiant.org
 
 # custom favicons
