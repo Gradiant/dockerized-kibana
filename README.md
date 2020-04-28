@@ -3,7 +3,8 @@
 ## TL;DR
 
 To build a specific kibana version checkout the corresponding minor version branch and use `build.sh` script.
-Example:
+
+For Example for 7.5.x versions:
 
 ```
 git checkout 7.5
